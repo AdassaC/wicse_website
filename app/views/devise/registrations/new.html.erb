@@ -1,8 +1,7 @@
 <%=render partial: "shared/navbar_setup" %>
 <%=render partial: "shared/main_start" %>
 <section class = "sign_up">
-  <form class ="form sign_up-form">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, html: {class:"form sign_up-form"}, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <!--PROMPT USER FOR EMAIL-->
@@ -31,7 +30,6 @@
       </div>
     <% end %>
     <%= render "devise/shared/links" %>
-  </form>
 </section>
 <%=render partial: "shared/main_end" %>
 <%=render partial: "shared/footer" %>

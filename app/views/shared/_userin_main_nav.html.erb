@@ -70,7 +70,7 @@ and also where stuff required for pages to render correctly is placed.
       <!--/div>-->
     </div>
     <div class="nav-link logout-link">
-      <a href="<%=new_user_session_path%>", class="btn">log out</a>
+      <%=link_to "log out", destroy_user_session_path, method: :delete, class:"btn"%>
     </div>
   </div>
 </nav>
