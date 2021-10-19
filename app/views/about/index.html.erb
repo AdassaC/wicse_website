@@ -1,2 +1,30 @@
-<%= render partial: 'shared/header' %>
-<h1> Hi <h1>
+<%# the only way to comment out
+<%if user_signed_in?
+  <%render partial: "shared/userin_main_nav"
+<%else
+  <%render partial: "shared/navbar_setup"
+<%end %>
+<%=render partial: 'shared/navbar_setup' %>
+<%=render partial: "shared/main_start" %>
+<section class = "about-page">
+  <article class="about">
+    <h2>
+      A Site Formulated for Students
+    </h2>
+    <div class="basic_container about_container">
+      <h4>
+        Mission
+      </h4>
+      <p>
+        This web application was created to allow college students to leave reviews on courses that they have taken, and gain more information about courses that they would like to take in the future.
+        The web application serves as a tool for college students or prospective students to gain an understanding of the courses that a university offers or requires for their majors.
+        It will allow them to share resources that will enable them to be successful.
+        Also, it should provide students to have a safe space to communicate their thoughts and opinions about their school, or other subject matters tied to collegiate affairs.
+
+      </p>
+    </div>
+  </article>
+</section>
+<%=render partial: "shared/main_end" %>
+<%=render partial: "shared/footer" %>
+<!--LOGO NAMES AND IDEAS: SimplyCourses, AllCours %>

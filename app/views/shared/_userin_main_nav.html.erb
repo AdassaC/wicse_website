@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<!Anything included in the head element will not be displayed to the user
+The header is where meta-information about our pages is placed,
+and also where stuff required for pages to render correctly is placed.
+-->
+<head>
+  <!--TITLE IDEAS:
+    -foreCourse
+    -EduPath
+    -CourseGuide
+    -CourseGenie
+    -CoursePath
+    -EduCourses
+    -EduRate
+    -RateDotEdu
+    -forewordCourse
+    -PathMyCourse
+    -DisCourse
+    -CourseWay
+    -CourseTrack
+    -EduGrade
+    -EduScore
+    -EduGuide
+    -CourseGrade
+    -eduRank
+-->
+  <title>
+    Home
+  </title>
+  <meta charset="utf-8"/>
+  <!--NORMALIZE--->
+  <%link_to "./css/normalize.css", stylesheet_link_tag %>
+
+  <!---FAVICON-->
+  <!--link_to "./assets/favicon.ico", favicon_link_tag, style:"image/x-icon"-->
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+
+  <!--FONT AWESOME ICON-->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+  <!--APPLICATION CSS-->
+  <!--link rel="stylesheet" href="./css/main.css"-->
+  <%link_to "./css/application.css", stylesheet_link_tag %>
+</head>
+
+<body>
+<!--NAVIGATION BAR-->
+<nav class="navbar">
+  <div class="nav-center">
+    <!--header-->
+    <div class = "nav-header">
+      <%=link_to( image_tag("logo.png", :alt => "foreCourse"), user_main_path, :class=>"nav-logo") %>
+      <button type="button" class="btn nav-btn">
+        <i class="fas fa-align-justify"></i>
+      </button>
+    </div>
+    <!--links-->
+    <div class="btn nav-links">
+      <!--<link_to "home", home_index_path, :class=>"nav-link">
+      #<link_to "about", about_index_path, :class=>"nav-link">
+      #<!link_to login_path, :class=>"nav-link"> Sign Up/Login-->
+      <!--<div class="btn navbarb">-->
+      <a href="<%= user_main_path %>", class="nav-link">home</a>
+      <a href="<%= about_path %>", class="nav-link">about</a>
+      <a href="<%= user_find_school_index_path %>", class="nav-link">Search for An Institution</a>
+      <a href="<%= search_path %>", class="nav-link">find a course</a>
+      <a href="<%= write_review_path%>", class="nav-link">review a course</a>
+      <!--/div>-->
+    </div>
+    <div class="nav-link logout-link">
+      <a href="<%=new_user_session_path%>", class="btn">log out</a>
+    </div>
+  </div>
+</nav>
+<!--end of nav-->

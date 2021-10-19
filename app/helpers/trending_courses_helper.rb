@@ -1,0 +1,2 @@
+module TrendingCoursesHelper
+end

@@ -1,0 +1,42 @@
+<%=render partial: "shared/navbar_setup" %>
+<%=render partial: "shared/main_start" %>
+
+<section class = "find_school-page">
+<form class="form searchft" action="/find_school_results">
+  <div class="search_row">
+    <input type="text" name="search" placeholder="Search" aria-label="Search" class="form-input search_area"/>
+    <button class="btn btn-block search_btn" type="submit">Search</button>
+  </div>
+</form>
+
+  <div class="basic_container school_table_container">
+    <table class="school_table">
+      <tr class="school_table_header">
+        <th>Save</th>
+        <th>Overall Rating</th>
+        <th>School Name</th>
+        <th>Reviews</th>
+      </tr>
+      <tr class="school_table_data">
+        <td>
+          ICON
+          <!--SCHOOL DATA API--->
+        </td>
+        <td>
+          4.1
+        </td>
+        <td>
+          University of Florida
+        </td>
+        <td>
+          137
+        </td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<%=render partial: "shared/main_end" %>
+<%=render partial: "shared/footer" %>
+
+

@@ -1,0 +1,28 @@
+<%=render partial: "shared/navbar_setup" %>
+<%=render partial: "shared/main_start" %>
+<section class = "login">
+
+  <!--PROMPT USER FOR USERNAME-->
+  <form class ="form login_form">
+    <div class = "form_row">
+      <h3>
+        Hello, again!
+      </h3>
+      <hr width="100%" color="FFFFFFFF">
+      <label for = "username" class = "form-label">username</label>
+      <input type="text" name="username"  id="username" class="form-input"/>
+    </div>
+  <!--PROMPT USER FOR PASSWORD-->
+    <div class = "form_row">
+      <hr width="100%" color="FFFFFFFF">
+      <label for = "password" class = "form-label">password </label>
+      <input type="text" name="password"  id="password" class="form-input"/>
+    </div>
+    <hr size="8" width="100%" color="FFFFFFFF">
+    <button type="submit" class="btn btn-block">
+      login
+    </button>
+  </form>
+</section>
+<%=render partial: "shared/main_end" %>
+<%=render partial: "shared/footer" %>

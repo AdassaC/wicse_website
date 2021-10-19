@@ -1,0 +1,33 @@
+<%=render partial: "shared/navbar_setup" %>
+<%=render partial: "shared/main_start" %>
+<section class = "sign_up">
+
+  <form class ="form sign_up-form">
+    <!--PROMPT USER FOR EMAIL-->
+    <div class = "form_row">
+      <h3>
+        sign up
+      </h3>
+      <label for = "email" class = "form-label"> email </label>
+      <input type="text" name="email"  id="email" class="form-input"/>
+    </div>
+    <!--PROMPT USER FOR PASSWORD-->
+    <div class = "form_row">
+      <hr width="100%" color="FFFFFFFF">
+      <label for = "password" class = "form-label"> password </label>
+      <input type="text" name="password"  id="password" class="form-input"/>
+    </div>
+    <!--CONFIRM PASSWORD-->
+    <div class = "form_row">
+      <hr width="100%" color="FFFFFFFF">
+      <label for = "confirm_password" class = "form-label"> confirm password </label>
+      <input type="text" name="confirm_password"  id="confirm_password" class="form-input"/>
+    </div>
+    <hr size="8" width="100%" color="FFFFFFFF">
+    <button type="submit" class="btn btn-block">
+      sign up
+    </button>
+  </form>
+</section>
+<%=render partial: "shared/main_end" %>
+<%=render partial: "shared/footer" %>

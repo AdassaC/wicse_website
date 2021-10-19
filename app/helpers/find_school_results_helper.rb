@@ -1,0 +1,2 @@
+module FindSchoolResultsHelper
+end

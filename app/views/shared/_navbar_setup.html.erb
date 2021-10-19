@@ -1,4 +1,4 @@
-<!--DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <!Anything included in the head element will not be displayed to the user
 The header is where meta-information about our pages is placed,
@@ -57,36 +57,20 @@ and also where stuff required for pages to render correctly is placed.
       </button>
     </div>
     <!--links-->
-    <div class="nav-links">
+    <div class="btn nav-links">
       <!--<link_to "home", home_index_path, :class=>"nav-link">
       #<link_to "about", about_index_path, :class=>"nav-link">
       #<!link_to login_path, :class=>"nav-link"> Sign Up/Login-->
-      <div class="btn navbar btn">
+      <!--<div class="btn navbarb">-->
         <a href="<%= home_path %>", class="nav-link">home</a>
         <a href="<%= about_path %>", class="nav-link">about</a>
-        <a href="<%= login_path %>", class="nav-link">sign up/login</a>
-        <a href="<%= search_path %>", class="nav-link">search</a>
-      </div>
-      <div class="nav-link contact-link">
-        <a href="<%contact_path %>", class="btn">contact</a>
-      </div>
-
+        <a href="<%= find_school_path %>", class="nav-link">search</a>
+        <a href="<%= new_user_registration_path %>", class="nav-link">sign up/login</a>
+      <!--/div>-->
+    </div>
+    <div class="nav-link contact-link">
+      <a href="<%=contact_path%>", class="btn">contact</a>
     </div>
   </div>
 </nav>
 <!--end of nav-->
-<script src="./manifest.js">
-</script>
-<!--main-->
-<main class="page">
-</main>
-<!---end of main-->
-<!---footer-->
-<footer class = "page-footer">
-  <p>&copy; <span id = "date">2021</span>
-    <span class = "footer-logo">
-      eduScore
-    </span>
-    Built by AC
-  </p>
-</footer>
