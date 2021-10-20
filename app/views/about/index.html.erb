@@ -1,9 +1,10 @@
 
 <% if user_signed_in? %>
-  <%render partial: "shared/userin_main_nav"%>
+  <%= render partial: "shared/userin_main_nav"%>
 <%else %>
-  <%render partial: "shared/navbar_setup" %>
+  <%= render partial: "shared/navbar_setup" %>
 <%end %>
+
 <%=render partial: "shared/main_start" %>
 <section class = "about-page">
   <article class="about">
