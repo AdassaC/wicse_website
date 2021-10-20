@@ -458,7 +458,7 @@ ul {
     position: relative;
    margin-bottom: 2rem;
     border-radius: var(--borderRadius);
-    background: url('../public/main1.jpg') center/cover no-repeat;
+    background-image: url(<%= asset_path 'main1.png' %>) center/cover no-repeat;
 }
 .hero-container{
    position: absolute;
