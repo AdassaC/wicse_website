@@ -1,5 +1,5 @@
 
-<% if user_signed_in %>
+<% if user_signed_in? %>
   <%render partial: "shared/userin_main_nav"%>
 <%else %>
   <%render partial: "shared/navbar_setup" %>
@@ -26,4 +26,4 @@
 </section>
 <%=render partial: "shared/main_end" %>
 <%=render partial: "shared/footer" %>
-<!--LOGO NAMES AND IDEAS: SimplyCourses, AllCours %>
+<!--LOGO NAMES AND IDEAS: SimplyCourses, AllCourse %>
