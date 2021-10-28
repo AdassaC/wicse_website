@@ -31,9 +31,9 @@ Rails.application.routes.draw do
     get "/user_main", to: "user_main#index"
     resources :user_main, only: :index
 
-    #FIND A SCHOOL
-    get "/find_school", to: "find_school#index"
-    resources :find_school, only: :index
+    #COLLGES
+  
+    resources :colleges, only: :index
 
     #FIND SCHOOL RESULTS
     get "/find_school_results", to:"find_school_results#search"

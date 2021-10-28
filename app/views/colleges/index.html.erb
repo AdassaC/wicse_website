@@ -2,35 +2,32 @@
 <%=render partial: "shared/main_start" %>
 
 <section class = "find_school-page">
-<form class="form searchft" action="/find_school_results">
-  <div class="search_row">
-    <input type="text" name="search" placeholder="Search" aria-label="Search" class="form-input search_area"/>
-    <button class="btn btn-block search_btn" type="submit">Search</button>
-  </div>
-</form>
+
+<%= form_with url: colleges_path, class:"form searchft", method: :get do |form| %>
+  <%= form.text_field :query, placeholder:"Search", class: "form-input search_area"%>
+  <%= form.submit "Search", class:"btn btn-block search_btn"%>
+<% end %>
 
   <div class="basic_container school_table_container">
     <table class="school_table">
       <tr class="school_table_header">
-        <th>Save</th>
-        <th>Overall Rating</th>
-        <th>School Name</th>
-        <th>Reviews</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>State</th>
       </tr>
+      <%= @colleges.each do | college | %>
       <tr class="school_table_data">
         <td>
-          *
+          <%= college.name %>
         </td>
         <td>
-          4.1
+         <%= college.city %>
         </td>
         <td>
-          University of Florida
-        </td>
-        <td>
-          137
+        <%= college.state %>
         </td>
       </tr>
+      <% end %>
     </table>
   </div>
 </section>
