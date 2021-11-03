@@ -18,7 +18,7 @@
       <%= @colleges.each do | college | %>
       <tr class="school_table_data">
         <td>
-          <%= college.name %>
+          <%= link_to college.name, college_path(college)%>
         </td>
         <td>
          <%= college.city %>

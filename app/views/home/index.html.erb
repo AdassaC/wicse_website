@@ -1,5 +1,12 @@
 <!--TITLE NAVBAR HEADER-->
-<%=render partial: "shared/navbar_setup" %>
+<% if user_signed_in? %>
+  <%=render partial:"shared/userin_main_nav"%>
+<!---<% elsif destroy_user_session_path%>
+  <%=render partial: "shared/navbar_setup" %>-->
+<%else %>
+  <%=render partial: "shared/navbar_setup"%>
+<%end%>
+
   <!--HEADER-->
 <main class="page">
   <header class ="hero">
