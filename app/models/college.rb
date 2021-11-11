@@ -1,2 +1,3 @@
 class College < ApplicationRecord
-  end
+  has_many :courses
+  end 

@@ -10,6 +10,7 @@ class CollegesController < ApplicationController
   def show
     @college = College.find(params[:id])
     #@courses = @college.courses
+    #@reviews = @courses.reviews
   end
 
 end

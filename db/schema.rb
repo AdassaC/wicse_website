@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_143511) do
+ActiveRecord::Schema.define(version: 2021_11_10_130559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 2021_10_26_143511) do
     t.string "name", null: false
     t.string "state", null: false
     t.string "city", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "course_id", null: false
+    t.string "name", null: false
+    t.bigint "college_id"
+    t.index ["college_id"], name: "index_courses_on_college_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating", null: false
+    t.integer "year", null: false
+    t.string "semester", null: false
+    t.string "summary", null: false
+    t.bigint "course_id"
+    t.bigint "user_id"
+    t.index ["course_id"], name: "index_reviews_on_course_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,1 +1,44 @@
-<h1> <%= @college.name %> </h1>
+<!--TITLE NAVBAR HEADER-->
+<% if user_signed_in? %>
+  <%=render partial:"shared/userin_main_nav"%>
+<%else %>
+  <%=render partial: "shared/navbar_setup"%>
+<%end%>
+
+<!--MAIN-->
+<%=render partial: "shared/main_start" %>
+<section class = "colleges-page">
+  <article class="colleges">
+    <h2>
+     <%= @college.name %>
+    </h2>
+    <div class="basic_container about_container">
+      <h4>
+        Courses | 
+      </h4>
+      <table>
+        <%= @college.courses.each do | course | %>
+                <tr class="college_courses_header">
+                    <!--<th>Overall Rating</th>-->
+                    <th>Course Name</th>
+                    <th>Course Number</th>
+                </tr>
+                <tr class="course_at_college">
+                    <td>
+                        <%= link_to course.name, course_path(course)%>
+                    </td>
+                    <td>
+                    <%= course.course_id %>
+                    </td>
+                </tr>
+            <%end%>
+        </table>
+    </div>
+  </article>
+</section>
+
+<!--FOOTER-->
+<%=render partial: "shared/main_end" %>
+<%=render partial: "shared/footer" %>
+
+

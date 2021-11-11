@@ -1,0 +1,24 @@
+<!--TITLE NAVBAR HEADER-->
+<% if user_signed_in? %>
+  <%=render partial:"shared/userin_main_nav"%>
+<%else %>
+  <%=render partial: "shared/navbar_setup"%>
+<%end%>
+
+<section class = "review-page">
+  <article>
+    <h2 class="review-page_h2">
+      Write a Review
+    </h2>
+
+    <div class="basic_container review_container">
+      <%= form_with model: @review do |form| %>
+        <%= form.text_field :name%>
+        <%form.submit "Submit", class:"btn btn-block review_submit_btn", type:"submit"%>
+      <%end%>
+    </div>
+  </article>
+</section>
+
+<%=render partial: "shared/main_end" %>
+<%=render partial: "shared/footer" %>

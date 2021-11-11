@@ -7,8 +7,8 @@
 
 <%=render partial: "shared/main_start" %>
 
-<section class = "find_school-page">
-  <%= form_with url: colleges_path, class:"form searchft", method: :get do |form| %>
+<section class = "find_course-page">
+  <%= form_with url: courses_path, class:"form searchft", method: :get do |form| %>
     <%= form.text_field :query, placeholder:"Search", class: "form-input search_area"%>
     <%= form.submit "Search", class:"btn btn-block search_btn"%>
   <% end %>
@@ -17,19 +17,19 @@
       <table class="school_table">
         <tr class="school_table_header">
           <th>Name</th>
-          <th>City</th>
-          <th>State</th>
+          <th>Course Number</th>
+          <th>College</th>
         </tr>
-        <%= @colleges.each do | college | %>
+        <%= @courses.each do | courses | %>
         <tr class="school_table_data">
           <td>
-            <%= link_to college.name, college_path(college)%>
+            <%= link_to course.name, course_path(course)%>
           </td>
           <td>
-          <%= college.city %>
+          <%= course.course_id %>
           </td>
           <td>
-          <%= college.state %>
+          <%= course.college_id %>
           </td>
         </tr>
         <% end %>
@@ -39,5 +39,3 @@
 
 <%=render partial: "shared/main_end" %>
 <%=render partial: "shared/footer" %>
-
-
