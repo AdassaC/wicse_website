@@ -20,8 +20,8 @@
           <th>City</th>
           <th>State</th>
         </tr>
-        <%= @colleges.each do | college | %>
-        <tr class="school_table_data">
+        <% @colleges.each do | college | %>
+        <tr class= "school_table_data">
           <td>
             <%= link_to college.name, college_path(college)%>
           </td>

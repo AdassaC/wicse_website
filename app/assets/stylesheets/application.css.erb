@@ -486,11 +486,12 @@ ul {
 
 /*ABOUT*/
 .about-page h2{
+    font-weight: bolder;
     width: 97%;
     color: var(--grey-800);
-    font-weight: bold;
     text-align: right;
     margin-bottom: 1rem;
+    text-transform: revert;
 }
 .about-page h4{
     color: var(--grey-800);
@@ -556,7 +557,7 @@ ul {
            }
        }
 
-       /*FIND SCHOOL (NONUSER)*/
+       /*COLLEGES INDEX*/
        .search_area{
            width: 79.9%
        }
@@ -575,6 +576,7 @@ ul {
            position: relative;
        }
        .school_table_header{
+           display: revert;
            color: #2E2F30;
            font-family: Futura;
            font-style: normal;
@@ -584,6 +586,15 @@ ul {
            letter-spacing: var(--letterSpacing);
            justify-content: center;
            text-align: center;
+           margin-top: 3rem;
+       }
+       .school_table_header th {
+           height: 35px;
+           display: table-cell;
+           vertical-align: inherit;
+           text-align: center;
+           font-weight: bold;
+           justify-self: stretch;
        }
        .school_table_data{
            color: #2E2F30;
@@ -596,6 +607,11 @@ ul {
            letter-spacing: var(--letterSpacing);
            width: 100%;
            text-align: center;
+       }
+       .school_table_data td {
+           display: table-cell;
+           justify-self: stretch;
+           max-width: 20px;
        }
        @media screen and (min-width: 992px) {
            .find_school-page{
@@ -699,3 +715,79 @@ ul {
            }
 
        }
+
+      /*COLLEGES_SHOW*/
+       .colleges-page {
+           color: var(--primary-500);
+       }
+       .colleges-page h2{
+           font-family: "Arial Rounded MT Bold";
+           font-weight: bolder;
+           margin-bottom: 1.3rem;
+           margin-left: .5rem;
+       }
+       .colleges-page h4 {
+           color: #2E2F30;
+           margin-bottom: 2rem;
+           margin-left: 2rem;
+           margin-right: 2rem;
+       }
+       .courses_in_colleges_container {
+           padding-top: 2rem;
+           min-height: calc(100vh - (10rem));
+           background: white;
+           position: center;
+           width: 100%;
+           height: 100%;
+           border-radius: 15px;
+           box-shadow: var(--shadow-2);
+       }
+       .courses_at_college_table {
+           width: 100% ;
+           position: relative;
+       }
+       /*.colleges-page tbody {
+           width: 100%;
+           position: relative;
+           margin: 2rem;
+           align-self: center;
+       }*/
+       .college_courses_header {
+           color: #2E2F30;
+           width: 100%;
+           display: revert;
+           font-family: Futura;
+           font-style: normal;
+           font-weight: normal;
+           line-height: 1.3;
+           text-transform: capitalize;
+           letter-spacing: var(--letterSpacing);
+           justify-content: center;
+           text-align: center;
+       }
+       .college_courses_header th {
+           display: table-cell;
+           vertical-align: inherit;
+           text-align: center;
+           font-weight: bold;
+           justify-self: stretch;
+       }
+       /*.colleges-page {
+           width: fit-content;
+           margin-left: 2rem;
+           margin-right: 2rem;
+           margin-bottom: 2rem;
+       }*/
+       .course_at_college {
+           width: 100%;
+           font-family: var(--headingFont);
+           font-style: normal;
+           font-weight: normal;
+           line-height: 1.3;
+           text-transform: capitalize;
+           letter-spacing: var(--letterSpacing);
+           text-align: center;
+       }
+
+       /*
+

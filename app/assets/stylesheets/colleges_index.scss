@@ -1,0 +1,58 @@
+/*FIND SCHOOL (NONUSER)*/
+.search_area{
+  width: 79.9%
+}
+.school_table_container{
+  padding-top: 2rem;
+  min-height: calc(100vh - (10rem));
+  background: white;
+  position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: var(--shadow-2);
+}
+.school_table{
+  width: 100%;
+  position: relative;
+}
+.school_table_header{
+  display: revert;
+  color: #2E2F30;
+  font-family: Futura;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.3;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  justify-content: center;
+  text-align: center;
+}
+.school_table_header th {
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: center;
+  font-weight: bold;
+  justify-self: stretch;
+}
+.school_table_data {
+  color: #2E2F30;
+  background: white;
+  font-family: var(--headingFont);
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.3;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  width: 100%;
+  text-align: center;
+}
+@media screen and (min-width: 992px) {
+  .find_school-page{
+  }
+  .search_btn{
+    width: 15%;
+    padding: 0.275rem 0.75rem;
+    height: 1.89rem;
+  }
+}

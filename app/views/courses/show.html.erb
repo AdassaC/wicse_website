@@ -1,1 +1,35 @@
-<%=link_to "Add Review", new_review_path %>
+<!---TITLE NAVBAR HEADER-->
+<% if user_signed_in? %>
+  <%=render partial:"shared/userin_main_nav"%>
+<%else %>
+  <%=render partial: "shared/navbar_setup"%>
+<%end%>
+
+<!--MAIN-->
+<%=render partial: "shared/main_start" %>
+<section class = "colleges_course_reviews-page">
+
+  <h2>
+    <%= @course.name %> | <%= @course.college.name %>
+  </h2>
+
+  <%=link_to "Add Review", new_review_path, class:"btn btn-block add-review_btn" %>
+
+  <div class = "basic_container courses_in_colleges_container" >
+    <h4>
+      <%=@course.name%> | Reviews
+    </h4>
+
+    <% @course.reviews.each do | review | %>
+    <div class="basic_container reviews_container">
+      <%= link_to review.summary, reviews_path(review)%>
+    </div>
+    <%end%>
+
+  </div>
+
+</section>
+
+<!--FOOTER-->
+<%=render partial: "shared/main_end" %>
+<%=render partial: "shared/footer" %>

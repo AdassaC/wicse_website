@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  get 'courses/index'
-  get 'user_find_school/index'
-  get 'course_results/index'
+  
   devise_for :users
   get '/user' => "home#index", :as => :user_root
-  devise_for :admins
 
   root to: "home#index"
     #HOME
@@ -33,10 +30,6 @@ Rails.application.routes.draw do
 
     #COLLEGES
     resources :colleges, only: %i[index show]
-
-    #FIND SCHOOL RESULTS
-    #get "/find_school_results", to:"find_school_results#search"
-    #resources :find_school_results
 
     #COURSE
     resources :courses, only: %i[index show]

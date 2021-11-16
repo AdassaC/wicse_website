@@ -8,33 +8,31 @@
 <!--MAIN-->
 <%=render partial: "shared/main_start" %>
 <section class = "colleges-page">
-  <article class="colleges">
     <h2>
      <%= @college.name %>
     </h2>
-    <div class="basic_container about_container">
+    <div class = "basic_container courses_in_colleges_container" >
       <h4>
-        Courses | 
+        Courses | <%=@college.name%>
       </h4>
-      <table>
-        <%= @college.courses.each do | course | %>
-                <tr class="college_courses_header">
-                    <!--<th>Overall Rating</th>-->
-                    <th>Course Name</th>
-                    <th>Course Number</th>
-                </tr>
-                <tr class="course_at_college">
-                    <td>
-                        <%= link_to course.name, course_path(course)%>
-                    </td>
-                    <td>
-                    <%= course.course_id %>
-                    </td>
-                </tr>
-            <%end%>
-        </table>
+      <table class = courses_at_college_table>
+        <tr class="college_courses_header">
+            <!--<th>Overall Rating</th>-->
+            <th>Course Name</th>
+            <th>Course Number</th>
+        </tr>
+        <tr class="course_at_college">
+          <td>
+            <% @college.courses.each do | course | %>
+            <%= link_to course.name, course_path(course)%>
+          </td>
+          <td>
+          <%= course.course_id %>
+          </td>
+        </tr>
+        <%end%>
+      </table>
     </div>
-  </article>
 </section>
 
 <!--FOOTER-->

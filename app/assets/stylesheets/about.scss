@@ -1,0 +1,42 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.erb.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/*ABOUT*/
+.about-page h2{
+  width: 97%;
+  color: var(--grey-800);
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.about-page h4{
+  color: var(--grey-800);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.about_container{
+  height: 16rem;
+}
+.about-page p{
+  text-transform: none;
+  color: var(--grey-800);
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.about-page {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  gap: 2rem 4rem;
+}
+@media screen and (min-width: 992px){
+  .about-page {
+    align-items: center;
+    justify-items: center;
+  }
+
+}

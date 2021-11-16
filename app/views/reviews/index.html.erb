@@ -5,6 +5,8 @@
   <%=render partial: "shared/navbar_setup"%>
 <%end%>
 
+<%=render partial: "shared/main_end" %>
+
 <section class = "review-page">
   <article>
     <h2 class="review-page_h2">
@@ -25,8 +27,9 @@
         <%=form.label :course_term, "Term:", class:"form-label course_term" %>
         <%=form.text_field :query,  class:"basic_container y_t_prof", class: "form-input course_term_input"%>
         
-        <!--<%= form.label :course_prof, "Professor:", class:"form-label course_professor"%>-->
-        <%= form.text_field :query,  class:"basic_container y_t_prof", class:"form-input course_prof_input"%>
+        <!--<%= form.label :course_prof, "Professor:", class:"form-label course_professor"%>
+        <%= form.text_field :query,  class:"basic_container y_t_prof", class:"form-input course_prof_input"%>-->
+        
         <!--<div class="basic_container rate_course">-->
         <div class="basic_container review_text_area">
           <div class="basic_container review_text_area_header">
@@ -41,6 +44,11 @@
     </div>
   </article>
 </section>
+
+<%= form_with model: @review do |form| %>
+        <%= form.text_field :name%>
+        <%form.submit "Submit", class:"btn btn-block review_submit_btn", type:"submit"%>
+      <%end%>
 
 <%=render partial: "shared/main_end" %>
 <%=render partial: "shared/footer" %>
