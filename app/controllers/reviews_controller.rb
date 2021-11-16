@@ -1,21 +1,29 @@
 class ReviewsController < ApplicationController
   def index
-    
   end
-
+  
   def new
     @review = Review.new
-    #To create an object, needs POST
   end
 
-  def create 
-    #logic for creating a new post
-    @review = Review.new(params[:review]) 
+  def create
+    @course = Course.find(params[:course_id])
+    @review = @course.reviews.new(create_params)
+
+    @review.user_id = current_user.id
+
     if @review.save
-      redirect_to @review
+      redirect_to @course
     else
       render "new"
     end
   end
+
+  private 
+  def create_params
+    params.permit(:semester, :summary, :year, :rating, :course_id, :user_id)
+  end
+
+
 
 end

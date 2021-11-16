@@ -31,8 +31,10 @@ Rails.application.routes.draw do
     #COLLEGES
     resources :colleges, only: %i[index show]
 
-    #COURSE
-    resources :courses, only: %i[index show]
+    #COURSES
+    resources :courses, only: %i[index show] do 
+      resources :reviews, only: %i[new create] 
+    end
 
     #TRENDING COURSES
     get "/trending_courses", to: "trending_courses#index"

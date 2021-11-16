@@ -12,19 +12,31 @@
     <h2 class="review-page_h2">
       Write a Review
     </h2>
+     <%= form_with url: course_reviews_path do |form| %>
+      <%= form.label :summary, "Course Review"%>
+      <%= form.text_field :summary, class:"form-input course_review_input"%>
 
-    <div class="basic_container review_container">
-      <div class="course_name_code">
-        <form accept-charset="UTF-8" action="/reviews" method="post">
-          <input type="text" name="reviews[rating]"/>
-          <input type="text" name="reviews[year]"/>
-          <input type="text" name="reviews[semester]"/>
-          <input type="text" name="reviews[summary]"/>
-          <input type="submit" value="Submit" class="btn btn-block review_submit_btn"/>
-        </form>
-        
-      </div>
-    </div>
+      <%= form.label :semester, "Term"%>
+      <%= form.select :semester, ["Fall", "Spring", "Summer"]%>
+
+      <%= form.label :year, "Year"%>
+      <%= form.select :year, 2016..2021%>
+      
+      <h4> Rating </h4>
+
+      <%= form.label :rating, "1"%>
+      <%= form.radio_button :rating, 1%>
+      <%= form.label :rating, "2"%>
+      <%= form.radio_button :rating, 2%>
+      <%= form.label :rating, "3"%>
+      <%= form.radio_button :rating, 3%>
+      <%= form.label :rating, "4"%>
+      <%= form.radio_button :rating, 4%>
+      <%= form.label :rating, "5"%>
+      <%= form.radio_button :rating, 5, checked: true%>
+      
+      <%= form.submit "Submit", class:"btn btn-block review_submit_btn"%>
+    <%end%>
   </article>
 </section>
 

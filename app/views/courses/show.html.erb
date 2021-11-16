@@ -13,7 +13,7 @@
     <%= @course.name %> | <%= @course.college.name %>
   </h2>
 
-  <%=link_to "Add Review", new_review_path, class:"btn btn-block add-review_btn" %>
+  <%=link_to "Add Review", new_course_review_path(@course), class:"btn btn-block add-review_btn" %>
 
   <div class = "basic_container courses_in_colleges_container" >
     <h4>
