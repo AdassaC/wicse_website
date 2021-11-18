@@ -8,21 +8,26 @@
 <!--MAIN-->
 <%=render partial: "shared/main_start" %>
 <section class = "colleges_course_reviews-page">
-
   <h2>
     <%= @course.name %> | <%= @course.college.name %>
   </h2>
 
-  <%=link_to "Add Review", new_course_review_path(@course), class:"btn btn-block add-review_btn" %>
+  <div class = "basic_container reviews_in_course_container" >
+    <div class = "course_reviews_header">
+      <h4>
+        Reviews | <%=@course.name%>
+      </h4>
+      <%=link_to "Add Review", new_course_review_path(@course), class:"btn btn-block add-review_btn" %>
+    </div>
 
-  <div class = "basic_container courses_in_colleges_container" >
-    <h4>
-      <%=@course.name%> | Reviews
-    </h4>
 
     <% @course.reviews.each do | review | %>
     <div class="basic_container reviews_container">
-      <%= link_to review.summary, reviews_path(review)%>
+      <%= review.semester %>
+      <%= review.year %>
+      <%= review.rating %>
+      <%= review.summary%>
+      <%= review.user.email%>
     </div>
     <%end%>
 

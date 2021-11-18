@@ -12,31 +12,44 @@
     <h2 class="review-page_h2">
       Write a Review
     </h2>
-     <%= form_with url: course_reviews_path do |form| %>
-      <%= form.label :summary, "Course Review"%>
-      <%= form.text_field :summary, class:"form-input course_review_input"%>
+    <div class="basic_container review_container">
+      <%= form_with url: course_reviews_path do |form| %>
+        
+        <div class="course_name_code">
+          <%= form.label :semester, "Term", class:"form-label course_year"%>
+          <%= form.select :semester, ["Fall", "Spring", "Summer"],  class: "form-input course_year_input"%>
+ 
+          <%= form.label :year, "Year", class:"form-label course_year"%>
+          <%= form.select :year, 2016..2021, class: "form-input course_term_input"%>
+        </div>
 
-      <%= form.label :semester, "Term"%>
-      <%= form.select :semester, ["Fall", "Spring", "Summer"]%>
+        <div class="basic_container rate_course">
+          <h4> Rating </h4>
 
-      <%= form.label :year, "Year"%>
-      <%= form.select :year, 2016..2021%>
-      
-      <h4> Rating </h4>
+          <%= form.label :rating, "1"%>
+          <%= form.radio_button :rating, 1%>
+          <%= form.label :rating, "2"%>
+          <%= form.radio_button :rating, 2%>
+          <%= form.label :rating, "3"%>
+          <%= form.radio_button :rating, 3%>
+          <%= form.label :rating, "4"%>
+          <%= form.radio_button :rating, 4%>
+          <%= form.label :rating, "5"%>
+          <%= form.radio_button :rating, 5, checked: true%>
 
-      <%= form.label :rating, "1"%>
-      <%= form.radio_button :rating, 1%>
-      <%= form.label :rating, "2"%>
-      <%= form.radio_button :rating, 2%>
-      <%= form.label :rating, "3"%>
-      <%= form.radio_button :rating, 3%>
-      <%= form.label :rating, "4"%>
-      <%= form.radio_button :rating, 4%>
-      <%= form.label :rating, "5"%>
-      <%= form.radio_button :rating, 5, checked: true%>
-      
-      <%= form.submit "Submit", class:"btn btn-block review_submit_btn"%>
-    <%end%>
+        <div class="basic_container review_text_area">
+          <div class="basic_container review_text_area_header">
+            <h3>
+              Review the Course
+            </h3>
+          </div>
+        <div>
+        <%= form.label :summary, "Course Review"%>
+        <%= form.text_field :summary, class:"form-input course_review_input", placeholder:"Write a review..."%>
+        
+        <%= form.submit "Submit", class:"btn btn-block review_submit_btn"%>
+      <%end%>
+    </div>
   </article>
 </section>
 

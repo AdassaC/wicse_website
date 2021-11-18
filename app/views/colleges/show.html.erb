@@ -17,19 +17,31 @@
       </h4>
       <table class = courses_at_college_table>
         <tr class="college_courses_header">
-            <!--<th>Overall Rating</th>-->
+            <th>Overall Rating</th>
             <th>Course Name</th>
             <th>Course Number</th>
+            <th>Number of Reviews</th>
         </tr>
-        <tr class="course_at_college">
-          <td>
-            <% @college.courses.each do | course | %>
-            <%= link_to course.name, course_path(course)%>
-          </td>
-          <td>
-          <%= course.course_id %>
-          </td>
-        </tr>
+        
+        <% @college.courses.sort_by { |c| c.average_rating }.reverse.each do | course | %>
+          <tr class="course_at_college">
+            <td>
+            <%if course.reviews.any?%>
+              <%=course.average_rating%>
+            <%else%> 
+              No reviews
+            <%end%>
+            </td>
+            <td>
+              <%= link_to course.name, course_path(course)%>
+            </td>
+            <td>
+            <%= course.course_id %>
+            </td>
+            <td>
+            <%=course.reviews.count%>
+            </td>
+          </tr>
         <%end%>
       </table>
     </div>
