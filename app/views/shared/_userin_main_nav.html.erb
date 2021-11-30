@@ -65,6 +65,10 @@ and also where stuff required for pages to render correctly is placed.
       <a href="<%= home_index_path %>", class="nav-link">home</a>
       <a href="<%= about_path %>", class="nav-link">about</a>
       <a href="<%= colleges_path %>", class="nav-link">Search for An Institution</a>
+
+      <!--< @user.colleges.each do | college | >
+      < link_to Find a Course, college_path(college), class:"nav-link">-->
+
       <a href="<%= courses_path %>", class="nav-link">find a course</a>
       <a href="<%= reviews_path%>", class="nav-link">review a course</a>
       <!--/div>-->

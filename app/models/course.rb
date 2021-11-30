@@ -4,6 +4,6 @@ class Course < ApplicationRecord
 
     def average_rating 
         
-        reviews.average(:rating).round(2)
+        reviews.average(:rating)&.round(2) || 0
     end
 end

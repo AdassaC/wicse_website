@@ -11,6 +11,9 @@
     <h2>
      <%= @college.name %>
     </h2>
+
+    <%= link_to "Add a Course", new_college_course_path(@college), class:"btn btn-block add-course_btn" %>
+   
     <div class = "basic_container courses_in_colleges_container" >
       <h4>
         Courses | <%=@college.name%>
@@ -36,7 +39,7 @@
               <%= link_to course.name, course_path(course)%>
             </td>
             <td>
-            <%= course.course_id %>
+            <%= link_to course.course_id, course_path(course) %>
             </td>
             <td>
             <%=course.reviews.count%>

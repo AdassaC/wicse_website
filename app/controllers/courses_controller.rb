@@ -10,4 +10,23 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
   end
+
+  def create
+    @college = College.find(params[:college_id])
+    @course = @college.courses.new(create_params)
+
+    @course.college_id = @college.id
+
+    if @course.save
+      redirect_to @course
+    else
+      render "new"
+    end
+  end
+
+  private 
+  def create_params
+    params.permit(:course_id, :name)
+  end
+
 end

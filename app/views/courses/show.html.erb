@@ -7,9 +7,9 @@
 
 <!--MAIN-->
 <%=render partial: "shared/main_start" %>
-<section class = "colleges_course_reviews-page">
+<section class = "course_show-page">
   <h2>
-    <%= @course.name %> | <%= @course.college.name %>
+    <%= @course.name %> | <%= link_to @course.college.name, college_path(@course.college) %>
   </h2>
 
   <div class = "basic_container reviews_in_course_container" >
@@ -17,17 +17,30 @@
       <h4>
         Reviews | <%=@course.name%>
       </h4>
-      <%=link_to "Add Review", new_course_review_path(@course), class:"btn btn-block add-review_btn" %>
-    </div>
 
+      <% if user_signed_in? %>
+        <%=link_to "Add Review", new_course_review_path(@course), class:"btn btn-block add-review_btn" %>
+      <%end%>
+    </div>
 
     <% @course.reviews.each do | review | %>
     <div class="basic_container reviews_container">
-      <%= review.semester %>
-      <%= review.year %>
-      <%= review.rating %>
-      <%= review.summary%>
-      <%= review.user.email%>
+      <i class="fas fa-star">
+        <%= review.rating %>
+      </i>
+
+      <div class = "review_course_info">
+        <%= review.semester %>
+        <%= review.year %>
+      </div>
+
+      <div class="review_summary_display">
+        <%= review.summary%>
+      </div>
+
+      <div class = "reviewer_info">
+        <%= review.user.email%>
+      </div>
     </div>
     <%end%>
 

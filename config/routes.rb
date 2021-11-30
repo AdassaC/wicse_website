@@ -29,10 +29,12 @@ Rails.application.routes.draw do
     resources :user_main, only: :index
 
     #COLLEGES
-    resources :colleges, only: %i[index show]
+    resources :colleges, only: %i[new create index show] do
+      resources :courses, only: %i[new create]
+    end
 
     #COURSES
-    resources :courses, only: %i[index show] do 
+    resources :courses, only: %i[new create index show] do 
       resources :reviews, only: %i[new create] 
     end
 

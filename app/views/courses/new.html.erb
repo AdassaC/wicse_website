@@ -1,0 +1,30 @@
+<!--NAVBAR HEADER-->
+<% if user_signed_in? %>
+  <%=render partial:"shared/userin_main_nav"%>
+<%else %>
+  <%=render partial: "shared/navbar_setup"%>
+<%end%>
+<%=render partial: "shared/main_end" %>
+
+<section class = "course_new-page">
+  <article>
+    <h2 class="course_new_page_h2">
+      Add a Course
+    </h2>
+    <div class="basic_container review_container">
+      <%= form_with url: college_courses_path do |form| %>
+        <div class="course_name_code">
+          <%= form.label :course_id, "Course Number", class:"form-label college_form"%>
+          <%= form.text_field :course_id, class:"form-input course_add_form_input"%>
+
+          <%= form.label :name, "Course Name", class:"form-label course_year"%>
+          <%= form.text_field :name, class:"form-input course_add_form_input"%>
+        </div>
+      <%= form.submit "Submit", class:"btn btn-block review_submit_btn"%>
+      <%end%>
+    </div>
+  </article>
+</section>
+
+<%=render partial: "shared/main_end" %>
+<%=render partial: "shared/footer" %>

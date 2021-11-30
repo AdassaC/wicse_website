@@ -8,33 +8,39 @@
 <%=render partial: "shared/main_start" %>
 
 <section class = "find_school-page">
-  <%= form_with url: colleges_path, class:"form searchft", method: :get do |form| %>
-    <%= form.text_field :query, placeholder:"Search", class: "form-input search_area"%>
-    <%= form.submit "Search", class:"btn btn-block search_btn"%>
-  <% end %>
+    <%= form_with url: colleges_path, class:"form searchft", method: :get do |form| %>
+      <%= form.text_field :query, placeholder:"Search", class: "form-input search_area"%>
+      <%= form.submit "Search", class:"btn btn-block search_btn"%>
+    <% end %> 
 
-    <div class="basic_container school_table_container">
-      <table class="school_table">
-        <tr class="school_table_header">
-          <th>Name</th>
-          <th>City</th>
-          <th>State</th>
-        </tr>
-        <% @colleges.each do | college | %>
-        <tr class= "school_table_data">
-          <td>
-            <%= link_to college.name, college_path(college)%>
-          </td>
-          <td>
-          <%= college.city %>
-          </td>
-          <td>
-          <%= college.state %>
-          </td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
+    <% if @colleges.any? %>
+      <div class="basic_container fit_school_table_container">
+        <table class="school_table">
+          <tr class="school_table_header">
+            <th>Name</th>
+            <th>City</th>
+            <th>State</th>
+          </tr>
+          <% @colleges.each do | college | %>
+            <tr class= "school_table_data">
+              <td>
+                <%= link_to college.name, college_path(college)%>
+              </td>
+              <td>
+              <%= college.city %>
+              </td>
+              <td>
+              <%= college.state %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    <% else %>
+      <h2> No colleges found! </h2>
+      <%= link_to "Add a College", new_college_path, class:"btn btn-block add-college_btn"%>
+    <% end %>
+    
 </section>
 
 <%=render partial: "shared/main_end" %>

@@ -14,28 +14,33 @@
     <%= form.submit "Search", class:"btn btn-block search_btn"%>
   <% end %>
 
-    <div class="basic_container course_table_container">
-      <table class="course_table">
-        <tr class="course_table_header">
-          <th>Name</th>
-          <th>Course Number</th>
-          <th>College</th>
-        </tr>
-        <%= @courses.each do | courses | %>
-        <tr class="course_table_data">
+    <% if user_signed_in? %>
+      <%= link_to "Add a Course", colleges_path, class:"btn btn-block add-course_btn", add_course: true %>
+      <!---<%add_course = true%>--->
+    <%end%>
+
+  <div class="basic_container courses_table_container">
+    <table class="courses_table">
+      <tr class="courses_table_header">
+        <th>Course Name</th>
+        <th>Course Number</th>
+        <th>College</th>
+      </tr>
+      <% @courses.each do | course | %>
+        <tr class="courses_table_data">
           <td>
             <%= link_to course.name, course_path(course)%>
           </td>
           <td>
-          <%= course.course_id %>
+          <%= link_to course.course_id, course_path(course)  %>
           </td>
           <td>
-          <%= course.college_id %>
+          <%= link_to course.college.name, college_path(course.college) %>
           </td>
         </tr>
-        <% end %>
-      </table>
-    </div>
+      <% end %>
+    </table>
+  </div>
 </section>
 
 <%=render partial: "shared/main_end" %>
