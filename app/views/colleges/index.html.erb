@@ -38,9 +38,11 @@
       </div>
     <% else %>
       <h2> No colleges found! </h2>
-      <%= link_to "Add a College", new_college_path, class:"btn btn-block add-college_btn"%>
+      <% if user_signed_in? %>
+        <%= link_to "Add a College", new_college_path, class:"btn btn-block add-college_btn"%>
+      <%end%>
     <% end %>
-    
+
 </section>
 
 <%=render partial: "shared/main_end" %>

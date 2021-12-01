@@ -68,14 +68,14 @@ and also where stuff required for pages to render correctly is placed.
 
       <!--< @user.colleges.each do | college | >
       < link_to Find a Course, college_path(college), class:"nav-link">-->
-
-      <a href="<%= courses_path %>", class="nav-link">find a course</a>
-      <a href="<%= reviews_path%>", class="nav-link">review a course</a>
-      <!--/div>-->
+      <a href="<%= courses_path %>", class="nav-link">review a course</a>
+      <!--<a href="<%= courses_path %>", class="nav-link">find a course</a>-->
     </div>
+
     <div class="nav-link logout-link">
       <%=link_to "log out", destroy_user_session_path, method: :delete, class:"btn"%>
     </div>
+
   </div>
 </nav>
 <!--end of nav-->

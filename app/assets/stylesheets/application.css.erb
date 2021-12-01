@@ -357,7 +357,6 @@ ul {
     flex-direction: column;
     transition: var(--transition);
 }
-
 .show-links{
     height: 310px;
 }
@@ -432,6 +431,7 @@ ul {
     position: center;
     border-radius: 15px;
     box-shadow: var(--shadow-2);
+    max-width: var(--max-width);
 }
 
 /*FOOTER*/
@@ -565,7 +565,7 @@ ul {
        .search_area{
            width: 79.9%
        }
-       .school_table_container{
+       .fit_school_table_container{
            padding-top: 2rem;
            min-height: calc(100vh - (10rem));
            background: white;
@@ -619,6 +619,7 @@ ul {
        }
        @media screen and (min-width: 992px) {
            .find_school-page{
+               height: fit-content;
            }
            .search_btn{
                width: 15%;
@@ -632,7 +633,7 @@ ul {
            width: 97%;
            color: #00488d;
            /*font-weight: bold;*/
-           position: relative;
+           text-align: center;
            margin: 1rem;
            right: -16rem;
 
@@ -643,8 +644,15 @@ ul {
            display: grid;
            gap: 2rem 4rem;
        }
+       .review-page body {
+           color: #00488d;
+       }
+       .review_new_icon {
+           font-weight: 100;
+       }
        .review_container {
-           width: 100%;
+           max-width: var(--max-width);
+           min-width: fit-content;
            height: fit-content;
            padding: 2rem;
        }
@@ -653,20 +661,23 @@ ul {
            box-shadow: none;
 
        }
+       .rate_course {
+
+       }
        .course_name_code{
            box-shadow: none;
            width: auto;
            margin-outside: 0;
            height: fit-content;
-           margin-top: 0;
-           margin-bottom: 0;
-           justify-content: left;
            color: #00488d;
+           display: inline-grid;
+           margin:  1rem;
+           align-items: center;
 
        }
        .course_name_input{
            width: 30%;
-           justify-items: left;
+           justify-items: right;
            margin-right: 15.22rem;
            margin-left: 0rem;
            color: #00488d;
@@ -679,17 +690,30 @@ ul {
            color: #00488d;
        }
 
-       .y_t_prof{
-           box-shadow: none;
+       .review_form_term {
+           display: inherit;
+           margin:  1rem;
+           align-items: center;
        }
-       .course_year_input {
+       .course_year {
+           margin-right: 1rem;
 
        }
-       .course_term_input{
-
+       .review_form_year {
+           display: inherit;
+           margin:  1rem;
+           align-items: center;
        }
-       .course_prof_input{
-
+       .course_term{
+           margin-right: 1rem;
+       }
+       .rate_course {
+           margin-top: 2rem;
+           color: #00488d;
+       }
+       .rate_course h3 {
+           font-family: var(--bodyFont);
+           text-align: center;
        }
        .ratings {
            color: #00488d;
@@ -737,6 +761,17 @@ ul {
            font-weight: bolder;
            margin-bottom: 1.3rem;
            margin-left: .5rem;
+       }
+       .colleges-page_header {
+           display: -webkit-box;
+           margin:  1rem;
+           align-items: center;
+       }
+       .add-course_btn {
+           position: relative;
+           margin-left: 56%;
+           margin-bottom: 2rem;
+           display: block;
        }
        .colleges-page h4 {
            color: #2E2F30;
@@ -843,13 +878,19 @@ ul {
        .course_show-page {
            color: var(--primary-500);
        }
+       .college_name_a{
+           color: #43836a;
+       }
        .course_show-page h2 {
            font-family: "Arial Rounded MT Bold";
            font-weight: bolder;
            margin-bottom: 1.3rem;
+           display: inline-flex;
        }
        .course_reviews_header {
-           margin-bottom: 3rem;
+           display: -webkit-box;
+           margin:  1rem;
+           align-items: center;
        }
        .course_show-page h4 {
            color: #2E2F30;
@@ -858,9 +899,9 @@ ul {
            margin-right: 2rem;
        }
        .add-review_btn {
-           position: fixed;
-           margin-left: 30%;
-           margin-top: -3%;
+           flex-direction: row;
+           margin-right: 0;
+           transition: var(--transition);
        }
        .reviews_in_course_container {
            padding-top: 1rem;
@@ -884,20 +925,42 @@ ul {
            width: fit-content;
            padding: 1rem;
        }
+       .reviews_container_header{
+           display: -webkit-box;
+           margin:  1rem;
+           align-items: center;
+       }
        .review_rating_icon {
-           border-radius: 100%;
-           background: #246fb7;
+           min-width: fit-content;
+           color: #438068;
+       }
+       .review_icon {
+           color: #438068;
+
+       }
+       .rating_buttons {
+           text-align: center;
        }
        .review_course_info {
+           flex-direction: row;
+           margin-right: 0;
            color: #2E2F30;
            font-weight: bold;
            font-family: Futura;
-           margin-left: 80%;
-           display: inline-flex;
+           justify-content: right;
+           display: block;
+           margin-left: auto;
 
+       }
+       .course_name_code  {
+           font-size: 1.5em;
+       }
+       review_summary_label {
+           text-align: center;
        }
        .review_summary_display {
            color: #2E2F30;
+           text-align: center;
        }
        .reviewer_info {
            text-align: right;
@@ -925,25 +988,52 @@ ul {
                padding: 1rem;
            }
            .add-review_btn {
-               margin-left: 58%;
-               margin-top: -2.5%;
+               margin-right: 0;
+               margin-left: 66%;
+               display: block ;
            }
        }
 
 
        /*COURSE INDEX*/
-       .add-course_btn {
+       .find_course-page h2 {
+           color: #2E2F30;
+           text-align: center;
+       }
+       .find_course-page h4 {
+           color: #2E2F30;
+           margin-bottom: 2rem;
+           margin-left: 2rem;
+           margin-right: 2rem;
+       }
+       .course_search_prompt {
+           font-size: 1em;
+
+       }
+       .college_names_inputs {
+           text-transform: capitalize;
+       }
+       .select_college {
            position: relative;
-           left: 44%;
+       }
+       .select_college_container {
+           width: 100%;
+           height: fit-content;
+       }
+       .add-course_to_college_btn {
+           position: relative;
+           left: 39%;
            margin-bottom: 2rem;
        }
        .courses_table {
            width: 100%;
            position: relative;
+           margin-bottom: 1rem;
        }
        .courses_table_container {
            padding-top: 2rem;
-           min-height: calc(100vh - (10rem));
+           /*min-height: calc(100vh - (10rem));*/
+           min-height: fit-content;
            background: white;
            position: center;
            width: 100%;

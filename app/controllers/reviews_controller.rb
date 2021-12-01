@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   end
   
   def new
-    @review = Review.new
+    @course = Course.find(params[:course_id])
   end
 
   def create

@@ -8,39 +8,57 @@
 
 <%=render partial: "shared/main_start" %>
 
+
+<!--<%= form_with url: colleges_path, class: "select_college", method: :get do |form| %>
+  <div class="basic_container select_college_container">
+    <div class="course_name_code">
+      <%= form.label :name, "Select College to Search From", class:"form-label course_year"%>
+      <%= form.select :name, College.all.collect {|p| [ p.name, p.id ] },  class: "form-input college_names_inputs"%>
+    </div>
+  </div>
+<%end%>-->
+
 <section class = "find_course-page">
-  <%= form_with url: courses_path, class:"form searchft", method: :get do |form| %>
+  <%= form_with url: courses_path(@college), class:"form searchft", method: :get do |form| %>
+    <%= form.label "Search for a course to review: ", class:"form-label course_search_prompt"%>
     <%= form.text_field :query, placeholder:"Search", class: "form-input search_area"%>
     <%= form.submit "Search", class:"btn btn-block search_btn"%>
   <% end %>
 
+  <% if @courses.any? %>
+    <div class="basic_container courses_table_container">
+      <h4>
+          Courses Available for Review
+      </h4>
+      <table class="courses_table">
+        <tr class="courses_table_header">
+          <th>Course Name</th>
+          <th>Course Number</th>
+          <th>College</th>
+        </tr>
+        <% @courses.each do | course | %>
+          <tr class="courses_table_data">
+            <td>
+              <%= link_to course.name, course_path(course)%>
+            </td>
+            <td>
+            <%= link_to course.course_id, course_path(course)  %>
+            </td>
+            <td>
+            <%= link_to course.college.name, college_path(course.college) %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  <%else%>
+    <h2> No courses found! </h2>
     <% if user_signed_in? %>
-      <%= link_to "Add a Course", colleges_path, class:"btn btn-block add-course_btn", add_course: true %>
+      <%= link_to "Add a Course to a College",  new_college_course_path(College.first), class:"btn btn-block add-course_to_college_btn", add_course: true %>
       <!---<%add_course = true%>--->
     <%end%>
-
-  <div class="basic_container courses_table_container">
-    <table class="courses_table">
-      <tr class="courses_table_header">
-        <th>Course Name</th>
-        <th>Course Number</th>
-        <th>College</th>
-      </tr>
-      <% @courses.each do | course | %>
-        <tr class="courses_table_data">
-          <td>
-            <%= link_to course.name, course_path(course)%>
-          </td>
-          <td>
-          <%= link_to course.course_id, course_path(course)  %>
-          </td>
-          <td>
-          <%= link_to course.college.name, college_path(course.college) %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
+  <%end%>
+    
 </section>
 
 <%=render partial: "shared/main_end" %>

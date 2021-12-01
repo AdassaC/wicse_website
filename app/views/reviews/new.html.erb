@@ -10,32 +10,38 @@
 <section class = "review-page">
   <article>
     <h2 class="review-page_h2">
-      Write a Review
+      Write a Review for <%=@course.name%>
     </h2>
     <div class="basic_container review_container">
       <%= form_with url: course_reviews_path do |form| %>
         
         <div class="course_name_code">
-          <%= form.label :semester, "Term", class:"form-label course_year"%>
-          <%= form.select :semester, ["Fall", "Spring", "Summer"],  class: "form-input course_year_input"%>
- 
-          <%= form.label :year, "Year", class:"form-label course_year"%>
-          <%= form.select :year, 2016..2021, class: "form-input course_term_input"%>
+          <div class = "review_form_term">
+            <%= form.label :semester, "Term", class:"form-label course_year"%>
+            <%= form.select :semester, ["Fall", "Spring", "Summer"],  class: "course_year_input"%>
+          </div>
+
+          <div class = "review_form_year">
+            <%= form.label :year, "Year", class:"form-label course_year"%>
+            <%= form.select :year, 2016..2021, class: "form-input course_term_input"%>
+          <div>
         </div>
 
-        <div class="basic_container rate_course">
-          <h4> Rating </h4>
-
-          <%= form.label :rating, "1"%>
-          <%= form.radio_button :rating, 1%>
-          <%= form.label :rating, "2"%>
-          <%= form.radio_button :rating, 2%>
-          <%= form.label :rating, "3"%>
-          <%= form.radio_button :rating, 3%>
-          <%= form.label :rating, "4"%>
-          <%= form.radio_button :rating, 4%>
-          <%= form.label :rating, "5"%>
-          <%= form.radio_button :rating, 5, checked: true%>
+        <div class="rate_course">
+          <h3> Rate the Course </h3>
+          <div class = "rating_buttons">
+            <%= form.label :rating, "1"%>
+            <%= form.radio_button :rating, 1%>
+            <%= form.label :rating, "2"%>
+            <%= form.radio_button :rating, 2%>
+            <%= form.label :rating, "3"%>
+            <%= form.radio_button :rating, 3 %>
+            <%= form.label :rating, "4"%>
+            <%= form.radio_button :rating, 4%>
+            <%= form.label :rating, "5"%>
+            <%= form.radio_button :rating, 5, checked: true%>
+          </div>
+        </div>
 
         <div class="basic_container review_text_area">
           <div class="basic_container review_text_area_header">
@@ -44,10 +50,13 @@
             </h3>
           </div>
         <div>
-        <%= form.label :summary, "Course Review"%>
-        <%= form.text_field :summary, class:"form-input course_review_input", placeholder:"Write a review..."%>
-        
-        <%= form.submit "Submit", class:"btn btn-block review_submit_btn"%>
+
+        </div class = "review_summary">
+          <%= form.label :summary, "Course Review", class: "review_summary_label"%>
+          <%= form.text_field :summary, class:"form-input course_review_input", placeholder:"Write a review..."%>
+          
+          <%= form.submit "Submit", class:"btn btn-block review_submit_btn"%>
+        </div>
       <%end%>
     </div>
   </article>

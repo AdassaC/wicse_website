@@ -8,12 +8,13 @@
 <!--MAIN-->
 <%=render partial: "shared/main_start" %>
 <section class = "colleges-page">
-    <h2>
-     <%= @college.name %>
-    </h2>
+    <div class="colleges-page_header">
+      <h2>
+      <%= @college.name %>
+      </h2>
 
-    <%= link_to "Add a Course", new_college_course_path(@college), class:"btn btn-block add-course_btn" %>
-   
+      <%= link_to "Add a Course", new_college_course_path(@college), class:"btn btn-block add-course_btn" %>
+    </div>   
     <div class = "basic_container courses_in_colleges_container" >
       <h4>
         Courses | <%=@college.name%>

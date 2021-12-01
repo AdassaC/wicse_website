@@ -9,7 +9,7 @@
 <%=render partial: "shared/main_start" %>
 <section class = "course_show-page">
   <h2>
-    <%= @course.name %> | <%= link_to @course.college.name, college_path(@course.college) %>
+    <%= @course.name %> |  <%= link_to  @course.college.name, college_path(@course.college), class: "college_name_a" %>
   </h2>
 
   <div class = "basic_container reviews_in_course_container" >
@@ -21,17 +21,24 @@
       <% if user_signed_in? %>
         <%=link_to "Add Review", new_course_review_path(@course), class:"btn btn-block add-review_btn" %>
       <%end%>
+
     </div>
+
 
     <% @course.reviews.each do | review | %>
     <div class="basic_container reviews_container">
-      <i class="fas fa-star">
-        <%= review.rating %>
-      </i>
+      <div class= "reviews_container_header">
+        <div class = "review_rating_icon">
 
-      <div class = "review_course_info">
-        <%= review.semester %>
-        <%= review.year %>
+          <i class="fas fa-star">
+          </i>
+          <%= review.rating%>
+      
+        </div>
+        <div class = "review_course_info">
+          <%= review.semester %>
+          <%= review.year %>
+        </div>
       </div>
 
       <div class="review_summary_display">
