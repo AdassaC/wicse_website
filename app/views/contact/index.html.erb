@@ -1,4 +1,22 @@
-<%=render partial: "shared/navbar_setup" %>
+<!--TITLE NAVBAR HEADER-->
+<% if user_signed_in? %>
+  <%=render partial:"shared/userin_main_nav"%>
+<%else %>
+  <%=render partial: "shared/navbar_setup"%>
+<%end%>
+
 <%=render partial: "shared/main_start" %>
+<section class = "contact-page">
+  <article class="contact">
+    <div class="basic_container contact_container">
+      <h4>
+        Contact Us
+      </h4>
+      <p>
+        Email: contact.eduscore@gmail.com
+      </p>
+    </div>
+  </article>
+</section>
 <%=render partial: "shared/main_end" %>
 <%=render partial: "shared/footer" %>

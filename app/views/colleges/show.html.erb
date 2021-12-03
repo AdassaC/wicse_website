@@ -13,7 +13,10 @@
       <%= @college.name %>
       </h2>
 
-      <%= link_to "Add a Course", new_college_course_path(@college), class:"btn btn-block add-course_btn" %>
+      <%if user_signed_in? %>
+        <%= link_to "Add a Course", new_college_course_path(@college), class:"btn btn-block add-course_btn" %>
+      <%end%>
+      
     </div>   
     <div class = "basic_container courses_in_colleges_container" >
       <h4>
