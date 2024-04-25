@@ -1,5 +1,5 @@
 # EduScore
-![EduScore Homepage](EduScore.png)
+
 ## PROJECT OVERVIEW
 With the help of my mentor, I was able to successfully create a web application that allows college students to leave reviews on courses that they have taken, and gain more information about courses that they would like to take in the future. The web application will serve as a tool for college students or prospective students to gain a broader understanding of the courses that a university offers or requires for their majors, share resources that will allow them to be successful, and as well provide students to have a safe space to communicate their thoughts and opinions about their school. The app allows users to search up different colleges and universities, and see the reviews listed for courses at those institutions. This allows the student to explore the different courses at a school, that a student has left a review for, and learn about those courses from a student perspective. In addition,  it also allows uses to create an account and login into the site in order to add a course to a college, and then add a review to a course at that college. 
 
@@ -8,9 +8,9 @@ What was done? How was it done?
 Structure of code developed in product
 
 ### Homepage and Website Introductory/Informational pages
+![EduScore Homepage](EduScore.png)
 
 The homepage feature is the main page that users are presented with when they load onto the site from a browser, which is able to be publicly accessible using Heroku. It is rendered through the use of HTML elements and the CSS style components of such elements that allow for there to be navigation bar with most of the links to the website available to all users, including the about page, the search for college feature, the contact page, and finally the sign-up or login feature. The navbar and navigation links are also rendered using JavaScript, using the manifest.js file located in the project. 
-
 
 ### User authentication
 
@@ -18,6 +18,7 @@ Through the “Sign Up/Login” link located in the navigation bar, the users ar
 
 
 ### ‘Search for Institution’ feature 
+![EduScore Search](EduScore Search.png)
 
 The search for an institution feature is available to all users and is implemented using the front-end languages and components listed previously, as well as the main programming language, ruby, of the project framework, Ruby on Rails. It allows for users to search for colleges in the database, and when such colleges are clicked on, they are able to view the reviews listed for the courses available at that college. This is done through the use of “GET” and “POST” commands in the rails framework, which interacts with the data available in the database by routing them to the calls. It takes in a query from the user and searches for it in the names of the colleges in the college table. It then returns the name of the college if it matches the case of the query, or returns nothing else. 
 
@@ -37,6 +38,7 @@ This feature can only be rendered to the user when the user has entered a query 
 
 The trending courses page, is rendered using the “POST” command for each college available in the database. In the “college.show” file, this page is presented by listing the courses available at a college, and ranking each by averaging out ratings for each with the total number reviews available for each. From this page the user is able to click on the available course at that college and view the reviews for that course. This is all done using, ruby, HTML, CSS, and the use of the CRUD operations within the database. 
 
+![EduScore Ratings](EduScore Ratings.png)
 
 
 ### ‘Add a Course’ feature available for authenticated users
