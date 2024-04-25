@@ -1,5 +1,5 @@
 # EduScore
-
+![EduScore Homepage](EduScore.png)
 ## PROJECT OVERVIEW
 With the help of my mentor, I was able to successfully create a web application that allows college students to leave reviews on courses that they have taken, and gain more information about courses that they would like to take in the future. The web application will serve as a tool for college students or prospective students to gain a broader understanding of the courses that a university offers or requires for their majors, share resources that will allow them to be successful, and as well provide students to have a safe space to communicate their thoughts and opinions about their school. The app allows users to search up different colleges and universities, and see the reviews listed for courses at those institutions. This allows the student to explore the different courses at a school, that a student has left a review for, and learn about those courses from a student perspective. In addition,  it also allows uses to create an account and login into the site in order to add a course to a college, and then add a review to a course at that college. 
 
